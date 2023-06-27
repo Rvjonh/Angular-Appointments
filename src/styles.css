@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.281)), url("assets/bg-appointment.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
