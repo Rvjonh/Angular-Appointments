@@ -8,8 +8,19 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateCitaComponent {
 
+  isIncorrectForm:boolean = false;
 
   onSubmit(form: NgForm){
-    console.log(form.value)
+    if(form.value.date === '' || form.value.name === '' || form.value.symptoms === '' || form.value.time === ''){
+      this.isIncorrectForm = true;
+      return;
+    }
+    this.isIncorrectForm = false;
+
+    const APPOINTMENT = {...form.value}
+    form.resetForm();
+
+    console.log(APPOINTMENT)
   }
+
 }

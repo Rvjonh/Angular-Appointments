@@ -2,6 +2,10 @@
     <div class="card-body">
         <h3 class="card-title text-center">Create Appointment</h3>
 
+        <div *ngIf="isIncorrectForm" class="text-center">
+            <span class="badge text-bg-danger">All the fields are required</span>
+        </div>
+
         <div class="card-body">
             <form #myForm="ngForm">
                 <div id="emailHelp" class="form-text">We'll never share your info with anyone else.</div>
