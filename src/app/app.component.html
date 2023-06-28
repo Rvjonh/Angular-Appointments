@@ -5,7 +5,7 @@
 
   <div class="row mt-2">
     <div class="col-lg-6">
-      <app-create-cita></app-create-cita>
+      <app-create-cita (newAppointment)="addAppointment($event)"></app-create-cita>
     </div>
     <div class="col-lg-6">
       <app-list-citas></app-list-citas>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,8 @@ export class CreateCitaComponent {
 
   isIncorrectForm:boolean = false;
 
+  @Output() newAppointment = new EventEmitter<any>();
+
   onSubmit(form: NgForm){
     if(form.value.date === '' || form.value.name === '' || form.value.symptoms === '' || form.value.time === ''){
       this.isIncorrectForm = true;
@@ -20,7 +22,7 @@ export class CreateCitaComponent {
     const APPOINTMENT = {...form.value}
     form.resetForm();
 
-    console.log(APPOINTMENT)
+    this.newAppointment.emit(APPOINTMENT)
   }
 
 }

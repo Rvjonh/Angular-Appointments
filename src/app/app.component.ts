@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CitasApp';
+  listAppointments:any[] = [];
+
+  addAppointment(appointment: any){
+    this.listAppointments.push(appointment);
+  }
+
 }
