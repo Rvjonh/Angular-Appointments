@@ -10,11 +10,13 @@
     </div>
 
     <ng-container *ngIf="listAppointments.length">
-        <div class="card-body m-2 border rounded" *ngFor="let appointment of listAppointments; let index">
+        <div class="card-body m-2 border rounded" *ngFor="let appointment of listAppointments; let i = index">
             <p class="card-text text-center position-relative">
                 ✨{{ appointment.name | titlecase }}✨
                 <button class="btn btn-danger rounded position-absolute top-0 end-0" 
-                        title="Delete">
+                        title="Delete"
+                        (click)="removeAppointment(i)"
+                        >
                     ❌
                 </button>
             </p>

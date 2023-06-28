@@ -8,7 +8,9 @@
       <app-create-cita (newAppointment)="addAppointment($event)"></app-create-cita>
     </div>
     <div class="col-lg-6">
-      <app-list-citas [listAppointments]="listAppointments"></app-list-citas>
+      <app-list-citas [listAppointments]="listAppointments"
+                      (deleteAppointment)="deleteAppointment($event)">
+      </app-list-citas>
     </div>
   </div>
 

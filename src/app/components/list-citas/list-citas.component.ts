@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Appointment } from 'src/interfaces/appointment';
 
@@ -10,5 +10,9 @@ import { Appointment } from 'src/interfaces/appointment';
 export class ListCitasComponent {
 
   @Input() listAppointments:Appointment[]=[];
+  @Output() deleteAppointment = new EventEmitter<number>();
 
+  removeAppointment(index:number){
+    this.deleteAppointment.emit(index);
+  }
 }

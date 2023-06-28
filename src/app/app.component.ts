@@ -12,4 +12,7 @@ export class AppComponent {
     this.listAppointments.push(appointment);
   }
 
+  deleteAppointment(index:number){
+    this.listAppointments.splice(index, 1)
+  }
 }
