@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-
+import { Appointment } from 'src/interfaces/appointment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  listAppointments:any[] = [];
+  listAppointments:Appointment[] = [];
 
-  addAppointment(appointment: any){
+  addAppointment(appointment: Appointment){
     this.listAppointments.push(appointment);
   }
 

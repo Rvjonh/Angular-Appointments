@@ -1,5 +1,31 @@
 <div class="card">
-    <div class="card-body">
+    <div class="card-header">
         <h3 class="card-title text-center">List of Appointments</h3>
     </div>
+
+    <div *ngIf="listAppointments.length === 0" class="card-body">
+        <p class="m-0 card-text text-center">
+            <span class="badge text-bg-secondary">There is no appointments yet</span>
+        </p>
+    </div>
+
+    <ng-container *ngIf="listAppointments.length">
+        <div class="card-body m-2 border rounded" *ngFor="let appointment of listAppointments; let index">
+            <p class="card-text text-center position-relative">
+                ✨{{ appointment.name | titlecase }}✨
+                <button class="btn btn-danger rounded position-absolute top-0 end-0" 
+                        title="Delete">
+                    ❌
+                </button>
+            </p>
+            <p class="card-text d-flex justify-content-between">
+                <span>{{ appointment.date }}</span>
+                <span>{{ appointment.time }}</span>
+            </p>
+            <ul class="m-0">
+                <li class="card-text" *ngFor="let symptom of appointment.symptoms">{{ symptom | titlecase }}</li>
+            </ul>
+        </div>
+    </ng-container>
+    
 </div>

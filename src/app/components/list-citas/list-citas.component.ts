@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Appointment } from 'src/interfaces/appointment';
 
 @Component({
   selector: 'app-list-citas',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-citas.component.css']
 })
 export class ListCitasComponent {
+
+  @Input() listAppointments:Appointment[]=[];
 
 }
